@@ -14,8 +14,8 @@ const middleWares = [];
 middleWares.push(sagaMiddleware);
 
 const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(...middleWares))
+    rootReducer,
+    composeEnhancers(applyMiddleware(...middleWares))
 );
 
 // then run the saga

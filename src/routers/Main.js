@@ -1,12 +1,26 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from '../components/Home';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Cate from '../components/Cate';
+import main from '../components/index';
 
 const Main = () => (
   <main>
-    <Switch>
-      <Route exact path="/" component={Home} />
-    </Switch>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/cate">Cate</Link>
+          </li>
+        </ul>
+
+        <hr />
+        <Route exact path="/" component={main} />
+        <Route path="/cate" component={Cate} />
+      </div>
+    </Router>
   </main>
 );
 
